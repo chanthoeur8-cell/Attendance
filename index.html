@@ -80,6 +80,18 @@ function updateTime(){
 }
 updateTime();
 setInterval(updateTime, 60000);
+function processAttendance() {
+    const name = document.getElementById("name").value.trim();
+    const role = document.getElementById("role").value.trim();
+    const type = document.getElementById("type").value;
+    const reason = document.getElementById("reason").value.trim();
+    const {time, date} = getNow();
+
+    if(!name || !role){
+        alert("សូមបំពេញឈ្មោះ និង តួនាទី");
+        return;
+    }
+
     // គណនានាទីយឺត
     let lateText = "";
     if (type === "checkin") {
@@ -163,5 +175,6 @@ function processAttendance() {
 </script>
 </body>
 </html>
+
 
 
