@@ -92,14 +92,6 @@ function processAttendance() {
         return;
     }
 
-    // គណនានាទីយឺត
-    let lateText = "";
-    if (type === "checkin") {
-        const lateMinutes = calculateLateMinutes(time, OFFICIAL_IN);
-        if (lateMinutes > 0) {
-            lateText = `\n⏰ <b>យឺត:</b> ${lateMinutes} នាទី`;
-        }
-    }
 
 // មុខងារផ្ញើសារទៅ Telegram (ប្រើតែមួយបានហើយ)
 async function sendToTelegram(message) {
@@ -175,6 +167,7 @@ function processAttendance() {
 </script>
 </body>
 </html>
+
 
 
 
